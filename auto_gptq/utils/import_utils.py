@@ -17,7 +17,8 @@ except:
 
 def dynamically_import_QuantLinear(use_triton: bool, desc_act: bool, group_size: int, format: str):
     if format == 'nf':
-        from ..nn_modules.qlinear.qlinear_cuda_nf import QuantLinear
+        # from ..nn_modules.qlinear.qlinear_cuda_nf import QuantLinear
+        from ..nn_modules.qlinear.qlinear_cuda_nf_nnfusion import QuantLinear
     elif use_triton:
         from ..nn_modules.qlinear.qlinear_triton import QuantLinear
     else:
